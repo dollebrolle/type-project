@@ -1,15 +1,19 @@
 package se.pjab.repository;
 
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
 import se.pjab.model.TypeText;
 
-public interface TypeTextRepository {
+@Repository
+public interface TypeTextRepository extends CrudRepository<TypeText, Long>{
 
-	void add(TypeText typeText);
+	void addTypeText(TypeText typeText);
 
-	void update(TypeText typeText);
+	void updateTypeText(TypeText typeText);
 
-	boolean delete(Long id);
+	void deleteTypeText(Long id);
 
-	TypeText get(Long id);
+	TypeText getTypeText(Long id);
 
 }
