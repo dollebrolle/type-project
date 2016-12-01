@@ -13,7 +13,7 @@ public class TypeTextService {
 	TypeTextRepository typeTextRepository;
 
 	public TypeText getTypeText(Long id) {
-		return this.typeTextRepository.getTypeText(id);
+		return typeTextRepository.findOne(id); 
 	}
 
 }
