@@ -11,14 +11,17 @@ import se.pjab.service.TypeTextService;
 
 @RestController
 public class TypeTextController {
-	
-	@Autowired
+
 	private TypeTextService typeTextService;
-	
-	@RequestMapping(value= "/{id}", method = RequestMethod.GET)
-	public TypeText getTypeText(@PathVariable("id") Long id){
+
+	@Autowired
+	public TypeTextController(TypeTextService typeTextService) {
+		this.typeTextService = typeTextService;
+	}
+
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public TypeText getTypeText(@PathVariable("id") Long id) {
 		return typeTextService.getTypeText(id);
 	}
-	
 
 }

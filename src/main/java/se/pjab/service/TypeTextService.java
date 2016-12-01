@@ -9,11 +9,15 @@ import se.pjab.repository.TypeTextRepository;
 @Service
 public class TypeTextService {
 
-	@Autowired
 	TypeTextRepository typeTextRepository;
 
+	@Autowired
+	public TypeTextService(TypeTextRepository typeTextRepository) {
+		this.typeTextRepository = typeTextRepository;
+	}
+
 	public TypeText getTypeText(Long id) {
-		return typeTextRepository.findOne(id); 
+		return typeTextRepository.findOne(id);
 	}
 
 }
